@@ -26,6 +26,9 @@ document.getElementById("start").addEventListener("click", function() {
     setTimeout(() => {
         takeScreenshot();
     }, 4000);
+
+    /** clear canvas */
+    context.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 /** Take screenshot */
@@ -36,7 +39,9 @@ document.getElementById("snap").addEventListener("click", function() {
 
 function takeScreenshot() {
     context.drawImage(video, 0, 0, 800, 600);
-    segmentImage();
+    setTimeout(() => {
+        segmentImage();
+    }, 1000);
 }
 
 async function segmentImage() {
@@ -45,14 +50,11 @@ async function segmentImage() {
     const net = await bodyPix.load();
     const segmentation = await net.segmentMultiPersonParts(img);
 
-    console.log(segmentation);
-
     // The mask image is an binary mask image with a 1 where there is a person and
     // a 0 where there is not.
     const coloredPartImage = bodyPix.toColoredPartMask(segmentation);
 
-    console.log(img);
-    const opacity = 0.5;
+    const opacity = 0.7;
     const flipHorizontal = false;
     const maskBlurAmount = 0;
     // Draw the mask image on top of the original image onto a canvas.
