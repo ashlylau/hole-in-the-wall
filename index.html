@@ -13,11 +13,17 @@
     </head>
 
     <body>
-        <div class="booth">
-            <video id='video' width="400" height="300" autoplay></video>
-            <canvas id='canvas' width="400" height="300"></canvas>
+        <div class='row'>
+            <div class="booth column">
+                <video id='video' width="800" height="600" autoplay></video>
+                <canvas id='canvas' class='canvas' width="800" height="600"></canvas>
+            </div>
+            <div class='buttons column'>
+                <p id="timer"></p>
+                <button id='snap'>take screenshot</button>
+                <button id='start'>start</button>
+            </div>
         </div>
-        <button id='snap'>take screenshot</button>
         <script src="js/video.js"></script>
     </body>
 </html>

@@ -1,6 +1,28 @@
 .booth {
-    width: 400px;
-    background-color: rgb(44, 151, 151);
-    border: 10px solid rgb(44, 151, 151);
-    margin: 0 auto
+    width: 800px;
+    float: left;
+    width: 60%;
+}
+
+.canvas {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+}
+
+p {
+    font-size: 100px;
+    font-family: sans-serif;
+}
+
+button {
+    background-color: salmon;
+    height: 40px;
+    font-size: 20px;
+}
+
+.buttons {
+    float: right;
+    width: 30%;
 }
